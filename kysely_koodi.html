@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: 'Segoe UI', sans-serif; margin-left: 20px; max-width: 600px;}
+  .title { background-color: #b7a271; padding: 10px;}
+  .question { margin-bottom: 20px; font-size: medium; }
+  #feedbackBtn { background: #b7a271; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+  #feedbackBtn:hover { background: #111111; }
+  #nextBtn { background: #b7a271; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+  #nextBtn:hover { background: #111111; }
+  #feedback { display: none; margin-top: 30px; padding: 15px; border-radius: 5px; }
+  .question-feedback { margin-top: 8px; background-color: lightgray;}
+  #qText { font-weight: bold; }
+</style>
+</head>
+<body>
+<div id="texts">
+<h1 class="title">Työelämätaidot-kysely</h1>
+<h3 id="scTitle">OMIEN TYÖELÄMÄTAITOJEN ARVIOINTI </h3>
+<p id="paragraph">Työelämätaidot muodostavat perustan, joiden avulla voit menestyä työelämässä, oppia uutta ja kasvaa ammatillisesti. Matkallasi opiskeluun ja työelämään voi löytyä esteitä, joiden tunnistamisella voit kehittää opiskelussa ja työelämässä tarvittavia taitoja. Saat tiedon osaamisestasi arvioimalla omia taitojasi kyselyssä ja laatimalla saamasi palautteen pohjalta kehittämissuunnitelman.</br>
+</br>Kyselyssä vastaat väittämiin asteikolla 1-5 : 1 = suoriudun erittäin huonosti 5 = suoriudun erittäin hyvin. Vastaamisen jälkeen saat kehittämisehdotuksia taidoista, joissa tunnistit tarvitsevasi muutosta.</p> </br>
+<img src="kiito_logot.png" style="width: 600px;" id="logo">
+</div>
+<form id="quizForm">
+
+  <div class="question" data-correct="1">
+    <p id="qText">1. Ymmärrän ja osaan soveltaa työhön liittyvää osaamista työssä. </p>
+    <label><input type="radio" name="q1" value="0"> 1</label><br>
+    <label><input type="radio" name="q1" value="0"> 2</label><br>
+    <label><input type="radio" name="q1" value="0"> 3</label><br>
+    <label><input type="radio" name="q1" value="1"> 4</label><br>
+    <label><input type="radio" name="q1" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">2. Osaan käyttää tietokoneita, ohjelmistoja ja muita työhön liittyviä teknologioita.</p>
+    <label><input type="radio" name="q2" value="0"> 1</label><br>
+    <label><input type="radio" name="q2" value="0"> 2</label><br>
+    <label><input type="radio" name="q2" value="0"> 3</label><br>
+    <label><input type="radio" name="q2" value="1"> 4</label><br>
+    <label><input type="radio" name="q2" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">3. Kykenen asettamaan tehtävät tärkeysjärjestykseen ja suunnittelemaan tehtäväni tehokkaasti.</p>
+    <label><input type="radio" name="q3" value="0"> 1</label><br>
+    <label><input type="radio" name="q3" value="0"> 2</label><br>
+    <label><input type="radio" name="q3" value="0"> 3</label><br>
+    <label><input type="radio" name="q3" value="1"> 4</label><br>
+    <label><input type="radio" name="q3" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">4. Otan vastuun oman työn laadusta ja tuloksista.</p>
+    <label><input type="radio" name="q4" value="0"> 1</label><br>
+    <label><input type="radio" name="q4" value="0"> 2</label><br>
+    <label><input type="radio" name="q4" value="0"> 3</label><br>
+    <label><input type="radio" name="q4" value="1"> 4</label><br>
+    <label><input type="radio" name="q4" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">5. Minulla on valmius kohdata ja ratkaista haasteita itsenäisesti.</p>
+    <label><input type="radio" name="q5" value="0"> 1</label><br>
+    <label><input type="radio" name="q5" value="0"> 2</label><br>
+    <label><input type="radio" name="q5" value="0"> 3</label><br>
+    <label><input type="radio" name="q5" value="1"> 4</label><br>
+    <label><input type="radio" name="q5" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">6. Kykenen ilmaisemaan ajatuksiani selkeästi ja kuuntelemaan muita.</p>
+    <label><input type="radio" name="q6" value="0"> 1</label><br>
+    <label><input type="radio" name="q6" value="0"> 2</label><br>
+    <label><input type="radio" name="q6" value="0"> 3</label><br>
+    <label><input type="radio" name="q6" value="1"> 4</label><br>
+    <label><input type="radio" name="q6" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">7. Osaan toimia osana tiimiä ja rakentavassa yhteistyössä.</p>
+    <label><input type="radio" name="q7" value="0"> 1</label><br>
+    <label><input type="radio" name="q7" value="0"> 2</label><br>
+    <label><input type="radio" name="q7" value="0"> 3</label><br>
+    <label><input type="radio" name="q7" value="1"> 4</label><br>
+    <label><input type="radio" name="q7" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">8. Kykenen kohtaamaan erilaisia asiakkaita ja vastata heidän tarpeisiinsa.</p>
+    <label><input type="radio" name="q8" value="0"> 1</label><br>
+    <label><input type="radio" name="q8" value="0"> 2</label><br>
+    <label><input type="radio" name="q8" value="0"> 3</label><br>
+    <label><input type="radio" name="q8" value="1"> 4</label><br>
+    <label><input type="radio" name="q8" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">9. Haluan hankkia uusia taitoja ja tietoja.</p>
+    <label><input type="radio" name="q9" value="0"> 1</label><br>
+    <label><input type="radio" name="q9" value="0"> 2</label><br>
+    <label><input type="radio" name="q9" value="0"> 3</label><br>
+    <label><input type="radio" name="q9" value="1"> 4</label><br>
+    <label><input type="radio" name="q9" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">10. Kykenen sopeutumaan muutoksiin ja oppimaan uutta nopeasti.</p>
+    <label><input type="radio" name="q10" value="0"> 1</label><br>
+    <label><input type="radio" name="q10" value="0"> 2</label><br>
+    <label><input type="radio" name="q10" value="0"> 3</label><br>
+    <label><input type="radio" name="q10" value="1"> 4</label><br>
+    <label><input type="radio" name="q10" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">11. Osaan perustiedot oman alani ja työpaikan työtehtävistä.</p>
+    <label><input type="radio" name="q11" value="0"> 1</label><br>
+    <label><input type="radio" name="q11" value="0"> 2</label><br>
+    <label><input type="radio" name="q11" value="0"> 3</label><br>
+    <label><input type="radio" name="q11" value="1"> 4</label><br>
+    <label><input type="radio" name="q11" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">12. Tunnen työturvallisuussäännökset ja noudatan niitä.</p>
+    <label><input type="radio" name="q12" value="0"> 1</label><br>
+    <label><input type="radio" name="q12" value="0"> 2</label><br>
+    <label><input type="radio" name="q12" value="0"> 3</label><br>
+    <label><input type="radio" name="q12" value="1"> 4</label><br>
+    <label><input type="radio" name="q12" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">13. Olen oma-aloitteinen työssäni.</p>
+    <label><input type="radio" name="q13" value="0"> 1</label><br>
+    <label><input type="radio" name="q13" value="0"> 2</label><br>
+    <label><input type="radio" name="q13" value="0"> 3</label><br>
+    <label><input type="radio" name="q13" value="1"> 4</label><br>
+    <label><input type="radio" name="q13" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">14. Suhtaudun positiivisesti työhöni ja työyhteisööni.</p>
+    <label><input type="radio" name="q14" value="0"> 1</label><br>
+    <label><input type="radio" name="q14" value="0"> 2</label><br>
+    <label><input type="radio" name="q14" value="0"> 3</label><br>
+    <label><input type="radio" name="q14" value="1"> 4</label><br>
+    <label><input type="radio" name="q14" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">15. Toimin työssäni rehellisesti ja vastuullisesti.</p>
+    <label><input type="radio" name="q15" value="0"> 1</label><br>
+    <label><input type="radio" name="q15" value="0"> 2</label><br>
+    <label><input type="radio" name="q15" value="0"> 3</label><br>
+    <label><input type="radio" name="q15" value="1"> 4</label><br>
+    <label><input type="radio" name="q15" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">16. Luon kontakteja ja ylläpidän niitä työssäni.</p>
+    <label><input type="radio" name="q16" value="0"> 1</label><br>
+    <label><input type="radio" name="q16" value="0"> 2</label><br>
+    <label><input type="radio" name="q16" value="0"> 3</label><br>
+    <label><input type="radio" name="q16" value="1"> 4</label><br>
+    <label><input type="radio" name="q16" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">17. Hyödynnän kokeneiden kollegoiden osaamista.</p>
+    <label><input type="radio" name="q17" value="0"> 1</label><br>
+    <label><input type="radio" name="q17" value="0"> 2</label><br>
+    <label><input type="radio" name="q17" value="0"> 3</label><br>
+    <label><input type="radio" name="q17" value="1"> 4</label><br>
+    <label><input type="radio" name="q17" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">18. Kykenen käsittelemään työssä paineita ja kykenen palautumaan vaikeista tilanteista.</p>
+    <label><input type="radio" name="q18" value="0"> 1</label><br>
+    <label><input type="radio" name="q18" value="0"> 2</label><br>
+    <label><input type="radio" name="q18" value="0"> 3</label><br>
+    <label><input type="radio" name="q18" value="1"> 4</label><br>
+    <label><input type="radio" name="q18" value="1"> 5</label>
+  </div>
+
+  <div class="question" data-correct="1">
+    <p id="qText">19. Vastaanotan palautetta ja hallitsen omia tunteitani.</p>
+    <label><input type="radio" name="q19" value="0"> 1</label><br>
+    <label><input type="radio" name="q19" value="0"> 2</label><br>
+    <label><input type="radio" name="q19" value="0"> 3</label><br>
+    <label><input type="radio" name="q19" value="1"> 4</label><br>
+    <label><input type="radio" name="q19" value="1"> 5</label>
+  </div>
+
+
+    <div class="buttons">
+    <button type="button" id="nextBtn">Seuraava</button>
+    <button type="submit" id="feedbackBtn" style="display:none;">Lähetä</button>
+    </div>
+
+</form>
+<div id="feedback"></div>
+
+<script>
+const feedbackTexts = {
+  q1: "</br>Pelkkä tiedon muistaminen ei riitä, vaan on tärkeää ymmärtää, mitä tieto tarkoittaa omassa työssä ja miten sitä voi soveltaa käytännössä.</br></br> <strong> 1. Ymmärrä ensin perusperiaatteet:</strong> älä opettele sääntöjä ulkoa, vaan selvitä miksi asiat tehdään ja mikä on tehtävän tavoite. Kun ymmärrät tarkoituksen, pystyt muokkaamaan toimintaa eri tilanteisiin.<br><br> <strong>2. Yhdistä teoria ja käytäntö:</strong> mieti heti, missä työtilanteessa voit käyttää uutta tietoa ja harjoittele soveltamista oikeissa työtehtävissä mahdollisimman pian.<br><br> <strong>3. Tee muistiinpanoja omin sanoin:</strong> kirjoita ohjeet lyhyesti ja lisää esimerkkejä omasta työstäsi, jotta ymmärrät asiat paremmin.<br><br> <strong>4. Harjoittele monipuolisesti:</strong> tee sama tehtävä eri tavoilla ja pyydä kollegalta vinkkejä, miten hän lähestyisi asiaa.<br><br> <strong>5. Pyydä palautetta:</strong> varmista, teitkö työn oikein ja onko olemassa vielä parempi tapa. Palaute auttaa kehittämään omaa osaamistasi.<br><br> <strong>6. Pohdi jälkeenpäin:</strong> pysähdy arvioimaan, mitä osasit hyödyntää aiemmista tiedoista ja mihin kohtiin tarvitset lisää harjoitusta.",
+  q2: "<br>Tietokoneiden, ohjelmistojen ja muiden teknologioiden hallinta on monilla aloilla perusosaamista, ja niiden käyttöä voi oppia järjestelmällisesti, vaikka lähtisi liikkeelle nollasta.<br><br> <strong>1. Aloita perusteista</strong> opettelemalla tietokoneen peruskäyttö, kuten kirjautuminen, tiedostojen tallennus, kansioiden luonti ja tulostaminen. Opettele ohjelmistojen peruskomennot, kuten avaaminen, tallentaminen, muokkaaminen ja sulkeminen, ja tutustu myös oikopolkuihin, jotka nopeuttavat työskentelyä.<br><br> <strong>2. Tutustu työssä käytettäviin ohjelmiin ja selvitä</strong>, mitkä niistä ovat tärkeimmät. Aloita keskeisistä toiminnoista, älä yritä opetella kaikkea kerralla. Esimerkiksi tekstinkäsittelyssä riittää alkuun, että hallitset kirjoittamisen, otsikoiden lisäämisen ja tiedoston tallentamisen PDF-muodossa.<br><br> <strong>3. Opi tekemällä käytännön harjoituksia</strong>, kuten tekstin kirjoittamista, yksinkertaisen taulukon tekemistä ja sähköpostin lähettämistä. Toistot arjen työssä vahvistavat oppimista.<br><br> <strong>4. Hyödynnä ohjelmien sisäiset ohjeet</strong> ja katso tarvittaessa verkkokursseja tai videoita, esimerkiksi YouTubesta.",
+  q3: "<br>Tehtävien tärkeysjärjestykseen asettaminen ja suunnittelu on yksi tärkeimmistä taidoista tehokkuuden ja ajanhallinnan kannalta.<br><br> <strong>Aloita määrittämällä tehtävien tärkeys ja kiireellisyys</strong>. Voit käyttää apuna nelikenttää, jossa tärkeät ja kiireelliset tehtävät tehdään heti, tärkeät mutta ei-kiireelliset suunnitellaan ja aikataulutetaan, ei-tärkeät mutta kiireelliset delegoidaan mahdollisuuksien mukaan ja ei-tärkeät sekä ei-kiireelliset pyritään minimoimaan tai jättämään kokonaan pois. Harjoittele tätä ottamalla viikon tehtävälista ja jakamalla se nelikenttään.<br><br><strong>tehtävä</strong> tärkeä ei-tärkeä<br>kiireellinen<br>ei-kiireellinen<br><br> Iso projekti voi tuntua ylitsepääsemättömältä, joten <strong>pilko se pienempiin osiin</strong>. Esimerkiksi raportin kirjoittaminen voidaan jakaa rakenteen laatimiseen, lähteiden etsimiseen ja johdannon kirjoittamiseen. Näin tehtävä muuttuu konkreettisemmaksi eikä jää roikkumaan epämääräisenä.<br><br> <strong>Käytä aikataulutusta ja rutiineja</strong>. Hyödynnä kalenteria tai tehtävälistoja. Voit myös ottaa tavaksi valita joka aamu kolme tehtävää, jotka teet varmasti päivän aikana.<br><br> <strong>Harjoittele ja arvioi säännöllisesti</strong>. Viikon lopussa pysähdy miettimään, mitä sait tehdyksi, mikä tehtävä osoittautui turhaksi ja mihin käytit liikaa aikaa.<br><br> <i>Pienenä harjoituksena kirjoita tämän viikon tehtäväsi ylös, jaa ne kiireellisiin ja tärkeisiin, valitse niistä kolme, joilla pääset eniten eteenpäin, ja suunnittele niille selkeä aikavaraus</i>.",
+  q4: "<br>Vastuun ottaminen omasta työstä on yksi tärkeimmistä ammatillisista taidoista. Se ei tarkoita vain sitä, että teet asioita, koska niin kuuluu tehdä, vaan sitä, että huolehdit työn laadusta, tuloksista ja omasta kehittymisestäsi.<br><br> <strong>1. Ensimmäinen askel on selkeyttää odotukset.</strong> Varmista, että tiedät, mitä sinulta odotetaan laadun, aikataulun ja lopputuloksen suhteen. Jos jokin on epäselvää, kysy tarkentavia kysymyksiä, jotta et työskentele väärien oletusten varassa.<br><br> <strong>2. Toinen askel on asettaa omat laatustandardit</strong>. Mieti, miltä näyttää työ, josta olet itse ylpeä. Tarkista tuotoksesi ennen kuin luovutat ne, ja pyri tekemään asiat niin, että ne helpottavat myös seuraavan ihmisen työtä.<br><br> <strong>3. Kolmanneksi reflektoi tuloksia</strong>. Arvioi työn jälkeen, mikä meni hyvin ja missä voisit parantaa. Ota palaute vastaan oppimisen välineenä, älä henkilökohtaisena arvosteluna.<br><br> <strong>4. Neljäs askel on olla aloitteellinen</strong>. Jos huomaat ongelman, älä jää odottamaan, että joku muu ratkaisee sen. Ehdota parannuksia tai kokeile ensin itse ratkaisua.",
+  q5: "<br>Haasteiden kohtaaminen ja ratkaiseminen itsenäisesti on taito, jota voi kehittää askel kerrallaan.<br><br> <strong>1. Ensimmäinen askel on vahvistaa ongelmanratkaisutaitoja</strong>. Määrittele ongelma selkeästi, sillä epämääräisyys tekee siitä usein suuremman kuin se on. Pilko ongelma pienempiin osiin ja tunnista osaongelmat. Listaa useampia ratkaisuvaihtoehtoja sen sijaan, että pysähtyisit ensimmäiseen ideaan.<br><br> <strong>2. Toinen askel on kehittää päätöksentekoa</strong>. Voit käyttää apuna yksinkertaisia työkaluja, kuten plussat ja miinukset -listaa. Harjoittele tekemään päätös myös silloin, kun kaikki tieto ei ole täydellistä – rohkeus kasvaa kokemuksen myötä.<br><br> <strong>3. Kolmanneksi kasvata resilienssiä eli sietokykyä</strong>. Muista, että haasteet tuntuvat vähemmän pelottavilta, kun ajattelet: “Opin tästä jotakin, vaikka epäonnistuisin.” Huolehdi myös palautumisesta, sillä tauot, uni ja liikunta auttavat jaksamaan ja estävät ongelmia kasvamasta liian suuriksi.<br><br> <strong>4. Neljäs askel on hyödyntää omaa oppimista</strong>. Reflektoi aiempia haasteita ja mieti, miten selvisit niistä. Voit pitää oppimispäiväkirjaa, johon kirjaat vaikeat tilanteet ja ratkaisut – se vahvistaa itseluottamustasi.<br><br> <strong>5. Viidentenä askeleena harjoittele kokeilemalla</strong>. Ota arjessa pieniä haasteita, kuten uuden tavan kokeileminen tai uuden taidon opettelu. Kun onnistut niissä, saat rohkeutta kohdata myös suurempia haasteita.<br><br> <strong>6. Kuudes askel on muistaa, että itsevarmuus kasvaa toimimalla</strong>. Älä odota täydellistä ratkaisua ennen kuin aloitat, vaan ota ensimmäinen pieni askel. Jokainen askel vahvistaa tunnetta siitä, että pystyt hoitamaan tilanteita itsenäisesti.",
+  q6: "<br>Selkeä ilmaiseminen ja hyvä kuunteleminen kulkevat käsi kädessä.<br><br> <strong>Ajatusten selkeä ilmaiseminen alkaa siitä, että jäsennät asian ensin itse</strong>. Mieti, mikä on pääviestisi, ja tiivistä se yhteen lauseeseen ennen kuin alat ilmaisemaan ajatuksiasi. Selitä asiat niin, että kuulija ymmärtää ne nopeasti.<br><br> <strong>Kerro asiat rakenteessa</strong>: aloita pääasiasta, jatka perustelulla ja päätä kertomalla, mitä seuraavaksi tehdään. Harjoittele ääneen pitämällä pieniä “minipuheita” esimerkiksi omista tehtävistäsi ja pyri selittämään asiat niin, että ulkopuolinenkin ymmärtäisi.<br><br> <strong>Muiden kuunteleminen vaatii läsnäoloa</strong>. Katso puhujaa, älä keskeytä ja laita häiriötekijät syrjään. Näytä, että kuuntelet nyökkäämällä, toistamalla kuulemasi omin sanoin ja kysymällä tarkentavia kysymyksiä. Älä mieti omaa vastaustasi liian aikaisin, vaan keskity ensin ymmärtämään.<br><br> <strong>Harjoittele aktiivista kuuntelua</strong> esimerkiksi päättämällä, että tämän keskustelun aikana yrität kuunnella enemmän kuin puhua.<br><br> <i>Pienenä harjoituksena voit harjoitella selkeyttä selittämällä arkipäiväisen asian, kuten kahvin keittämisen, niin yksinkertaisesti, että lapsikin ymmärtäisi. Voit myös harjoitella kuuntelemista toistamalla keskustelukumppanin sanoman omin sanoin, esimerkiksi “Jos ymmärsin oikein, sinä tarkoitit että…”</i>.",
+  q7: "<br>Tiimityö ja rakentava yhteistyö ovat taitoja, joita voi harjoitella aivan kuten mitä tahansa muuta.<br><br> <strong>Tiimityön perusasioihin kuuluvat selkeät roolit ja vastuut</strong>. Jokaisen on tiedettävä oma tehtävänsä ja muiden tehtävät, ja jos jokin on epäselvää, kannattaa kysyä. Avoin viestintä on välttämätöntä: kerro ajatuksesi ja edistymisesi rehellisesti ja pidä tiimi ajan tasalla, sillä se rakentaa luottamusta.<br><br> <strong>Hyvässä tiimissä kuunnellaan ja arvostetaan muiden näkemyksiä</strong>. Jokaisella on oma tapansa nähdä ongelmat, ja kaikille pitää antaa tilaa tuoda esiin ajatuksiaan, vaikka olisi itse eri mieltä. Ratkaisu- ja tavoitekeskeisyys auttaa etenemään: syyllisten etsimisen sijaan keskitytään kysymykseen “Miten etenemme tästä?” ja pidetään yhteinen tavoite mielessä.<br><br> <strong>Tiimissä annetaan ja vastaanotetaan palautetta rakentavasti</strong>. Keskity tekoihin, älä ihmisiin. Esimerkiksi voit sanoa: “Raportti jäi kesken, voitaisiinko sopia uusi aikataulu?” Palaute kannattaa ottaa mahdollisuutena kehittyä, ei henkilökohtaisena hyökkäyksenä.<br><br> <strong>Tiimityötä voi kehittää harjoittelemalla</strong>. Päivän lopuksi voi kiittää jotakuta tiimistä hänen panoksestaan. Roolin kirkastamiseksi voi kysyä itseltään: “Miten voin auttaa tiimiä onnistumaan?” ja kertoa sen muille. “Toisen kengissä” -harjoitus tarkoittaa sitä, että yrität ensin ymmärtää, miksi jonkun mielipide on hänen näkökulmastaan järkevä. Viikoittainen tiimipalautus puolestaan auttaa tunnistamaan, mikä sujui hyvin ja mitä voitaisiin yhdessä parantaa.<br><br> <strong>Muistisääntönä kannattaa muistaa, että tiimissä onnistuminen syntyy, kun jokainen käyttää omia vahvuuksiaan ja tukee muiden vahvuuksia</strong>.",
+  q8: "<br>Asiakaskohtaamiset ovat usein erilaisten ihmisten ja tilanteiden yhdistelmiä, ja kyky mukautua niihin on tärkeä taito.<br><br> <strong>1. Ensimmäinen perusperiaate on kuunnella ensin ja vastata vasta sen jälkeen</strong>. Asiakkaat arvostavat sitä, että heitä kuunnellaan kunnolla ennen ratkaisun tarjoamista. Käytä avoimia kysymyksiä, kuten “Mitä toivot tästä tuotteesta tai palvelusta?”.<br><br> <strong>2. Toinen askel on tunnistaa asiakkaan tyyli</strong>. Asiaorientoitunut asiakas haluaa faktoja, numeroita ja perusteluja, joten ole selkeä ja suora. Suhdeorientoitunut asiakas arvostaa ystävällistä ilmapiiriä, joten panosta vuorovaikutukseen. Kiireinen asiakas haluaa nopean vastauksen, joten mene suoraan ytimeen. Epävarma asiakas tarvitsee tukea ja rohkaisua, joten tarjoa vaihtoehtoja ja vakuuta lempeästi.<br><br> <strong>3. Kolmantena mukauta viestintää asiakkaan mukaan</strong>. Peilaa hänen sävyään ja tempoaan, mutta pysy kuitenkin omana itsenäsi. Käytä ymmärrettävää kieltä ja vältä turhaa ammattipuhetta.<br><br> <strong>4. Neljäs periaate on kysyä ja varmistaa ymmärrys</strong>. Voit esimerkiksi toistaa asiakkaan sanat omin sanoin: “Eli tarkoitat, että tarvitset ratkaisun, joka…”. Tämä osoittaa, että olet kuunnellut ja vähentää väärinymmärryksiä.<br><br> <strong>5. Viidentenä rakennat luottamusta pitämällä lupaukset ja aikataulut</strong>. Ole rehellinen myös rajoista – jos et tiedä vastausta heti, lupaa selvittää asia.<br><br> <strong>Asiakastyön taitoja voi kehittää harjoittelemalla</strong>. Rooliharjoituksessa kollega voi näytellä erilaista asiakastyyppiä, ja voit harjoitella, miten vastaat hänelle eri tavoilla. Jälkipohdinnassa voit kirjata asiakaskohtaamisesta ylös, millainen asiakas hän oli, miten vastasit hänen tarpeisiinsa ja mitä voisit kokeilla seuraavalla kerralla. Lisäksi voit kysyä itseltäsi empatiakysymyksen: “Miltä tämä tilanne näyttää asiakkaan näkökulmasta?”.",
+  q9: "<br>Halua oppia uusia taitoja ja tietoja voi kehittää – se ei aina synny itsestään, vaan sitä voi ruokkia.<br><br> <strong>1. Ensimmäinen askel on löytää merkitys</strong>. Kysy itseltäsi, miksi taito on hyödyllinen ja miten se liittyy omiin tavoitteisiisi, kuten uraan, arkeen, harrastuksiin tai hyvinvointiin. Kun näet oppimisella olevan suoran hyödyn, halu oppia kasvaa.<br><br> <strong>2. Toinen askel on tehdä oppimisesta palkitsevaa</strong>. Aseta pieniä, saavutettavia välitavoitteita ja palkitse itseäsi onnistumisista esimerkiksi tauolla tai mukavalla tekemisellä. Kun huomaat edistymisesi, se motivoi jatkamaan.<br><br> <strong>3. Kolmantena herätä uteliaisuus</strong>. Kysy itseltäsi “Mitä jos oppisin tämän?” tai “Miten tämä toimii?”. Lue tai kuuntele jotain uutta aiheesta, joka kiinnostaa edes vähän, sillä usein pienikin kipinä johtaa syvempään kiinnostukseen.<br><br> <strong>4. Neljäs askel on luoda oppimiselle tilaa arkeen</strong>. Varaa kalenterista pieni hetki oppimiselle, esimerkiksi viisitoista minuuttia päivässä, ja pidä oppiminen luontevana osana arkea sen sijaan, että näkisit sen ylimääräisenä taakkana.<br><br> <strong>5. Viidentenä hae inspiraatiota muilta</strong>. Seuraa ihmisiä, jotka osaavat taitoja, joista olet kiinnostunut, ja juttele kollegoiden, ystävien tai mentorin kanssa heidän oppimiskokemuksistaan. Kun näet, miten oppiminen hyödyttää muita, motivaatio tarttuu.<br><br> <strong>6. Kuudes askel on hyväksyä aloittelijuus</strong>. Kaikkea ei tarvitse osata heti, ja kun sallii itselleen harjoittelun sekä pienet virheet, oppiminen tuntuu vähemmän stressaavalta ja jopa hauskemmalta.<br><br> <i>Pienenä harjoituksena kirjoita lista kolmesta taidosta tai tiedosta, joita haluaisit oppia, ja lisää jokaiseen syy, miksi se kiinnostaa sinua</i>.",
+  q10: "<br>Muutos- ja oppimiskyky ovat työelämän tärkeimpiä taitoja. Ne eivät ole synnynnäisiä ominaisuuksia, vaan asioita, joita voi kehittää tietoisesti.<br><br> <strong>1. Ensimmäinen askel on muutoksen hyväksyminen</strong>. On hyvä ymmärtää, että muutos on pysyvää ja harva asia säilyy pitkään samanlaisena. Kun lakkaa taistelemasta muutosta vastaan, energiaa jää sen hyödyntämiseen. Kannattaa kysyä itseltään: “Mitä mahdollisuuksia tämä tuo mukanaan?”.<br><br> <strong>2. Toinen askel on uteliaisuuden vahvistaminen</strong>. Muutos herättää usein epävarmuutta, mutta näkökulman voi kääntää: “Mitä uutta voin oppia tästä tilanteesta?”. Oppijan asenne tarkoittaa, että kokeilee, kysyy ja testaa avoimesti.<br><br> <strong>3. Kolmas askel on edetä pienin askelin</strong>. Iso muutos voi tuntua kuormittavalta, mutta se helpottuu, kun sen jakaa pienempiin vaiheisiin. Yhden uuden asian opettelu kerrallaan on tehokkaampaa kuin kaiken yrittäminen heti.<br><br> <strong>4. Neljäs askel on resilienssin eli sietokyvyn vahvistaminen</strong>. Hyvä uni, liikunta ja säännölliset tauot parantavat joustavuutta ja auttavat palautumaan, jotta jaksaa muutoksen keskellä.<br><br> <strong>5. Viides askel on nopean oppimisen tekniikoiden käyttö</strong>. Oppimisessa kannattaa keskittyä ensin ydinasioihin. Kun sanoitat oppimasi omin sanoin, muistat sen paremmin, ja käytännön kokeilu tekee oppimisesta pysyvämpää.<br><br> <strong>6. Kuudes askel on verkostojen ja vertaistuen hyödyntäminen</strong>. Keskustele muiden kanssa, sillä heillä voi olla kokemuksia ja vinkkejä, jotka auttavat sopeutumaan nopeammin. Näin et jää yksin uuden tilanteen kanssa.<br><br> <i>Pienenä harjoituksena kirjoita ylös viimeisin muutos, johon jouduit sopeutumaan. Pohdi, mikä siinä oli vaikeinta, mitä opit itsestäsi ja mitä teit, mikä auttoi sopeutumaan</i>.",
+  q11: "<br>Perustietojen oppiminen on kivijalka, jolle myöhemmin rakennat osaamista ja varmuutta.<br><br> <strong>1. Ensimmäinen askel on hankkia kokonaiskuva</strong>. Pyydä tai etsi perehdytysmateriaaleja, kuten oppaita, ohjeita tai intranetin sisältöjä. Selvitä, mikä on yrityksen toiminta-ajatus ja tavoitteet sekä mikä on oma roolisi niissä. Kysy myös, mihin kokonaisuuteen oma työtehtäväsi liittyy.<br><br> <strong>2. Toinen askel on opetella perusteet ensin</strong>. Aloita tärkeimmistä ydintehtävistä, joita tarvitset päivittäin. Älä tavoittele täydellisyyttä, vaan pyri ymmärtämään pääkohdat. Hyödynnä muistilistoja ja tarkistuslomakkeita, jos niitä on käytettävissä.<br><br> <strong>3. Kolmanneksi seuraa ja opi kokeneemmilta</strong>. Katso, miten kollegat hoitavat samoja tehtäviä, ja pyydä saada seurata heidän työskentelyään. Kirjaa ylös käytännön vinkkejä, joita huomaat. 4. Neljäs askel on kysyä ja varmistaa ymmärrys. Jos jokin ohje on epäselvä, kysy rohkeasti ja toista asia omin sanoin varmistaaksesi, että ymmärsit oikein.<br><br> <strong>5. Viides askel on harjoitella käytännössä</strong>. Tee tehtävät itse niin pian kuin mahdollista, sillä oppiminen syvenee tekemisen kautta. Aloita helpoista tehtävistä ja etene vähitellen haastavampiin.<br><br> <strong>6. Kuudes askel on hyödyntää muistiinpanoja</strong>. Tee omia pikkuohjeita tai muistilappuja, joihin voit palata, jos sama asia tulee vastaan uudelleen.<br><br> <strong>7. Seitsemäntenä pyydä palautetta</strong>. Kysy, teitkö työn oikein ja mitä voisit parantaa. Palaute nopeuttaa oppimista ja vahvistaa varmuutta.<br><br> <i>Pienenä harjoituksena voit valita yhden työtehtävän ja kirjoittaa, mikä on sen tavoite. Tee tehtävästä muistilista ja tarkista kollegalta tai esimieheltä, onko listassa kaikki oleellinen</i>.",
+  q12: "<br>Työturvallisuussäännösten tunteminen ja niiden noudattaminen on yksi tärkeimmistä asioista työpaikalla, sekä oman että muiden hyvinvoinnin kannalta.<br><br> <strong>1. Ensimmäinen askel on hankkia perustieto</strong>. Tutustu työnantajan antamiin ohjeisiin, kuten työturvallisuusohjeisiin, perehdytysmateriaaliin ja työpaikan intranetiin. Lue myös oman alasi työturvallisuusmääräykset, kuten suojavarusteiden käyttö, koneiden turvallinen käyttö ja kemikaalien käsittely. Jos jokin jää epäselväksi, kysy esihenkilöltäsi tai työsuojeluvaltuutetulta.<br><br> <strong>2. Toinen askel on käyttää suojaimia ja välineitä oikein</strong>. Varmista, että sinulla on tarvittavat henkilönsuojaimet, kuten kypärä, kuulosuojaimet ja turvakengät. Käytä niitä aina, kun työtehtävä sitä vaatii – myös lyhyissä tilanteissa.<br><br> <strong>3. Kolmanneksi noudata ohjeita käytännössä</strong>. Käytä koneita ja laitteita vain ohjeiden mukaisesti. Älä oikaise tai tee nopeutuksia, jotka voivat lisätä riskejä. Pidä työpiste siistinä, sillä järjestys ehkäisee tapaturmia.<br><br> <strong>4. Neljäs askel on riskien tunnistaminen</strong>. Opettele huomaamaan vaaranpaikat, kuten liukkaat lattiat, väärin asetetut työkalut ja vialliset johdot. Jos huomaat riskin, ilmoita siitä heti eteenpäin.<br><br> <strong>5. Viides askel on toimia vastuullisesti</strong>. Muista, että työturvallisuus ei koske vain sinua itseäsi, vaan myös työkavereidesi turvaa. Kun noudatat ohjeita johdonmukaisesti, näytät hyvää esimerkkiä muille.<br><br> <strong>6. Kuudes askel on kerrata ja päivittää osaamista</strong>. Osallistu työturvallisuuskoulutuksiin ja käy säännöllisesti läpi ohjeet, erityisesti silloin, jos työtehtävät muuttuvat. Kertaus ylläpitää valppautta ja lisää turvallisuutta.<br><br> <i>Pienenä harjoituksena voit listata kolme tärkeintä työturvallisuussääntöä työpaikallasi. Kirjoita viereen, miksi ne ovat tärkeitä ja miten itse varmistat niiden toteutumisen arjessa.</i>",
+  q13: "<br>Oma-aloitteisuus on taito, jota työnantajat arvostavat paljon. Se tekee työstä mielekkäämpää, eikä tarkoita sitä, että pitäisi tehdä kaikkea yksin, vaan sitä, että otat aktiivisen roolin työn sujumisessa.<br><br> <strong>1. Ensimmäinen askel on tunnistaa oma vaikutuspiirisi</strong>. Kysy itseltäsi: “Mitä voin itse tehdä ilman, että joku käskee?”. Usein kyse on työn valmistelusta, pienistä parannuksista tai ongelmien ratkaisemisesta ajoissa.<br><br> <strong>2. Toinen askel on aloittaa pienestä</strong>. Jos huomaat tehtävän, jonka voisi tehdä heti, tartu siihen saman tien. Pienetkin aloitteet, kuten työpisteen järjestäminen tai tiedon jakaminen tiimille, rakentavat oma-aloitteisuuden tapaa.<br><br> <strong>3. Kolmas askel on olla utelias ja kiinnostunut</strong>. Kysy itseltäsi: “Mitä voisimme tehdä paremmin?”. Ehdota uusia ideoita, vaikka pieniäkin. Kaikkien ei tarvitse mennä käyttöön, mutta jo ehdottaminen on oma-aloitteista toimintaa.<br><br> <strong>4. Neljäs askel on seurata tilanteita ennakoivasti</strong>. Älä odota, että ongelma kasvaa, vaan tartu siihen varhaisessa vaiheessa. Jos näet esimerkiksi, että materiaalit loppuvat, tilaa niitä ajoissa tai ilmoita eteenpäin.<br><br> <strong>5. Viides askel on pyytää palautetta ja ottaa vastuuta</strong>. Voit kysyä esimieheltä: “Onko jotakin, mitä voisin hoitaa oma-aloitteisemmin?”. Ota vastuuta myös pienistä asioista, sillä luottamus kasvaa tekemällä.<br><br> <strong>6. Kuudes askel on luoda rutiini oma-aloitteisuudelle</strong>. Tee päivittäin yksi ylimääräinen asia, jota kukaan ei pyytänyt, mutta josta on hyötyä tiimille tai työpaikalle. Kun kirjaat nämä teot ylös, huomaat itsekin olevasi aktiivinen.<br><br> <i>Pienenä harjoituksena kirjoita ylös kolme tilannetta omasta työstäsi, joissa voisit ensi viikolla olla oma-aloitteisempi. Mieti, mitä voisit tehdä ilman erillistä pyyntöä ja miten se hyödyttäisi tiimiä tai työpaikkaa.</i>",
+  q14: "<br>Positiivinen suhtautuminen työhön ja työyhteisöön ei tarkoita sitä, että kaikki tuntuisi aina helpolta. Se tarkoittaa, että opit näkemään työn merkityksen, hyvät puolet ja mahdollisuudet myös arjen haasteissa.<br><br> <strong>1. Ensimmäinen askel on nähdä työn merkitys</strong>. Kysy itseltäsi, mitä hyötyä työlläsi on asiakkaille, tiimille tai yritykselle. Kun ymmärrät ison kuvan, myös pienet tehtävät tuntuvat arvokkailta.<br><br> <strong>2. Toinen askel on harjoitella kiitollisuutta arjessa</strong>. Kirjoita päivän päätteeksi ylös yksi tai kaksi asiaa, joista olet kiitollinen työssäsi. Ne voivat olla esimerkiksi onnistunut tehtävä, mukava kahvihetki tai hyvä keskustelu.<br><br> <strong>3. Kolmas askel on keskittyä vahvuuksiin</strong>. Huomaa, missä olet itse hyvä ja missä kollegasi loistavat. Anna palautetta ja kiitosta – se vahvistaa positiivista ilmapiiriä.<br><br> <strong>4. Neljäs askel on etsiä ratkaisuja ongelmien sijaan</strong>. Jos jokin ärsyttää, kysy itseltäsi: “Mitä voin itse tehdä tämän parantamiseksi?”. Ratkaisukeskeinen asenne lisää hallinnan tunnetta ja vähentää turhautumista.<br><br> <strong>5. Viides askel on ympäröidä itsesi positiivisuudella</strong>. Vietä aikaa niiden työkavereiden kanssa, jotka kannustavat ja tukevat. Asenteet tarttuvat, ja myös oma positiivisuutesi voi levitä muihin.<br><br> <strong>6. Kuudes askel on huolehtia omasta hyvinvoinnista</strong>. Riittävä uni, tauot ja palautuminen lisäävät kärsivällisyyttä ja hyvää mieltä, kun taas väsyneenä kaikki tuntuu helposti negatiivisemmalta.<br><br> <i>Pienenä harjoituksena kirjoita viikon ajan joka päivä ylös yksi positiivinen kokemus työstäsi. Viikon lopussa lue lista läpi ja huomaat, että hyviä asioita tapahtuu paljon useammin kuin arjessa tulee huomanneeksi.</i>",
+  q15: "<br>Rehellisyys ja vastuullisuus ovat työelämän perusarvoja. Ne luovat luottamusta, varmuutta ja hyvää ilmapiiriä, ja ne näkyvät sekä pienissä arjen teoissa että isoissa päätöksissä.<br><br> <strong>Rehellisyys työssä tarkoittaa lupausten pitämistä</strong>. Tee se, minkä olet luvannut, ja jos et ehdi, kerro siitä ajoissa. Ole avoin ja suora myös vaikeissa tilanteissa. Älä peittele virheitä, vaan tunnusta ne ja korjaa. Rehellisyys näkyy myös oikeudenmukaisuudessa: kohtele kaikkia tasapuolisesti äläkä ota epäoikeutettuja etuja.<br><br> <strong>Vastuullisuus tarkoittaa, että hoidat työtehtäväsi huolellisesti niin, että voit olla ylpeä tuloksesta</strong>. Jos teet virheen, älä etsi syyllisiä, vaan kerro siitä ja ehdota ratkaisua. Vastuullinen toiminta näkyy myös työturvallisuudesta ja työyhteisöstä huolehtimisessa – noudata sääntöjä ja auta kollegaa, jos huomaat riskin. Vastuullisuus on myös sitä, että mietit ennen toimintaa, miten se vaikuttaa muihin, asiakkaisiin ja koko työpaikkaan.<br><br> Käytännön harjoituksia ovat esimerkiksi rehellisyyden testi, jossa kysyt itseltäsi: “Kertoisinko tämän asian samalla tavalla, jos esimies tai asiakas olisi paikalla?”. Voit myös päivän lopuksi arvioida, mistä otit tänään vastuun ja mistä olisit voinut ottaa enemmän. Lisäksi voit pyytää palautetta esimerkiksi kerran viikossa kysymällä: “Näetkö, että hoidan työni rehellisesti ja vastuullisesti?”.<br><br> <strong>Muistisääntönä kannattaa muistaa: rehellisyys rakentaa luottamusta, vastuullisuus rakentaa arvostusta.</strong>",
+  q16: "<br>Työssä kontaktien luominen ja ylläpitäminen on tärkeä taito. Ne tukevat yhteistyötä, auttavat ongelmanratkaisussa ja voivat avata uusia mahdollisuuksia.<br><br> <strong>1. Ensimmäinen askel on olla aloitteellinen kontaktien luomisessa</strong>. Esittäydy uusille ihmisille ja kerro lyhyesti, mitä teet. Hyödynnä tilanteet, kuten palaverit, kahvitauot ja koulutukset, ja osoita kiinnostusta kysymällä toisen työstä tai projekteista.<br><br> <strong>2. Toinen askel on rakentaa luottamusta</strong>. Kuuntele sen sijaan, että keskittyisit vain omaan puheeseesi. Pidä lupaukset, sillä luottamus syntyy siitä, että toimit sanojesi mukaisesti. Ole avoin ja rehellinen, mutta samalla kunnioittava.<br><br> <strong>3. Kolmantena pidä yhteyttä säännöllisesti</strong>. Lähetä viesti, käy kysymässä kuulumisia tai vaihda ajatuksia epämuodollisesti. Muista myös pienet eleet, kuten “Kiitos avusta” tai “Hyvin hoidettu!”, sillä ne luovat hyvää ilmapiiriä. Älä ota yhteyttä vain silloin, kun tarvitset jotain.<br><br> <strong>4. Neljäs askel on hyödyntää yhteistyötä</strong>. Pyydä mielipidettä tai apua, sillä se vahvistaa sidettä ja osoittaa arvostusta. Tarjoa myös itse apua, kun siihen on mahdollisuus. Yhteiset onnistumiset rakentavat vahvimmat suhteet.<br><br> <strong>5. Viides askel on ylläpitää pitkäaikaisia suhteita</strong>. Vaikka yhteistyö päättyisi, voit silloin tällöin kysyä kuulumisia. Verkostot eivät ole vain nykyhetkeä varten, vaan niistä voi olla hyötyä myöhemminkin.<br><br> <i>Harjoituksena voit kirjoittaa listan kolmesta henkilöstä työssäsi, joiden kanssa haluaisit vahvistaa suhdetta. Kirjoita viereen konkreettinen teko, kuten keskustelu kahvitauolla, kiittäminen avusta projektissa tai näkemyksen kysyminen johonkin aiheeseen.</i>",
+  q17: "<br>Kokeneiden kollegoiden osaaminen on kuin ilmainen oppimisresurssi. He ovat jo kokeilleet, onnistuneet ja myös epäonnistuneet, ja heidän kokemuksistaan voi oppia paljon.<br><br> <strong>1. Ensimmäinen askel on olla avoin ja kiinnostunut</strong>. Näytä, että arvostat heidän tietotaitoaan, ja kysy kysymyksiä, kuten “Miten sinä ratkaisisit tämän?” tai “Mikä on paras tapa hoitaa tämä käytännössä?”.<br><br> <strong>2. Toinen askel on pyytää konkreettisia esimerkkejä</strong>. Teoria voi jäädä abstraktiksi, mutta esimerkit näyttävät, miten asiat toimivat arjessa. Voit pyytää: “Voisitko näyttää, miten sinä teet tämän Excelissä, asiakastilanteessa tai koneen säädössä?”.<br><br> <strong>3. Kolmantena seuraa ja havainnoi</strong>. Pyydä saada seurata heidän työtään eli varjostaa heitä hetkeksi. Kiinnitä huomiota pieniin käytännön asioihin, kuten työjärjestykseen, viestintätyyliin ja ajankäyttöön.<br><br> <strong>4. Neljäs askel on pyytää palautetta</strong>. Näytä oma tekemisesi ja kysy: “Onko jotain, mitä voisin tehdä paremmin?”. Palaute nopeuttaa oppimista paljon enemmän kuin pelkkä kokeilu itse.<br><br> <strong>5. Viides askel on luoda vuorovaikutussuhde</strong>. Älä kysy vain ongelmatilanteissa, vaan juttele myös onnistumisista ja pyydä vinkkejä etukäteen. Voit sanoa esimerkiksi: “Huomasin, että hoidat nämä tilanteet tosi hyvin. Mikä on salaisuus?”.<br><br> <strong>6. Kuudes askel on tehdä oppimisesta molemminpuolista</strong>. Kerro myös omia havaintojasi ja uusia ideoitasi, jotta suhde tuntuu tasapainoisemmalta. Kokeneet kollegat arvostavat, kun heidän osaamistaan kuunnellaan ja hyödynnetään.<br><br> <i>Harjoituksena voit valita yhden kokeneen kollegan ja tehdä suunnitelman: mitä haluat oppia häneltä, miten kysyt tai otat aiheen esille ja milloin voisit seurata hänen työskentelyään.</i>",
+  q18: "<br>Työelämässä paineet ja vaikeat tilanteet ovat väistämättömiä, mutta ratkaisevaa on, miten niihin suhtautuu ja miten niistä palautuu.<br><br> <strong>1. Ensimmäinen askel on tunnistaa paineen lähde</strong>. Kysy itseltäsi, mistä paine johtuu – onko se tiukka aikataulu, muiden odotukset vai oma vaativuus. Kun syy on selvillä, sitä on helpompi hallita.<br><br> <strong>2. Toinen askel on hallita tilannetta pienissä osissa</strong>. Pilko tehtävä pienempiin vaiheisiin ja keskity yhteen asiaan kerrallaan, jotta kuormitus vähenee.<br><br> <strong>3. Kolmas askel on hengittää ja rauhoittaa keho</strong>. Paine näkyy usein jännityksenä ja sydämen tykytyksenä. Pysähdy hetkeksi ja hengitä syvään sisään neljä sekuntia ja ulos kuusi sekuntia. Tämä rauhoittaa hermostoa ja selkeyttää ajatuksia.<br><br> <strong>4. Neljäs askel on hyödyntää tukea</strong>. Jaa tilanne tiimin, esimiehen tai kollegan kanssa – yhdessä paine kevenee. Muista, että avun pyytäminen on vastuullisuutta eikä heikkoutta.<br><br> <strong>5. Viides askel on vaihtaa näkökulmaa</strong>. Kysy itseltäsi: “Mitä voin oppia tästä tilanteesta?” ja ajattele vaikeaa hetkeä harjoituksena tulevaisuutta varten.<br><br> <strong>6. Kuudes askel on muistaa, että palautuminen on osa työtä</strong>. Pidä taukoja myös kiireessä – lyhyt kävely tai venyttely riittää. Huolehdi perusasioista, kuten unesta, ravinnosta ja liikunnasta. Tee jotain, mikä irrottaa ajatukset työstä, kuten harrastus, musiikin kuuntelu tai keskustelu ystävän kanssa.<br><br> <strong>7. Seitsemäs askel on reflektoida jälkikäteen</strong>. Kysy itseltäsi, miten selvisit, mitä teit hyvin ja mitä voisit tehdä ensi kerralla toisin. Tämä vahvistaa resilienssiä eli kykyä palautua ja jatkaa eteenpäin.<br><br> <i>Pienenä harjoituksena voit kirjoittaa ylös tilanteessa, mikä aiheuttaa painetta, mitä pieniä tekoja voit tehdä juuri nyt hallitaksesi tilannetta ja mitä aiot tehdä palautuaksesi, kun tilanne on ohi.</i>",
+  q19: "<br>Palautteen vastaanottaminen ja omien tunteiden hallinta ovat keskeisiä taitoja, jotka auttavat kehittymään ja vahvistavat yhteistyötä työssä.<br><br> <strong>1. Ensimmäinen askel on valmistautua palautteeseen oikealla asenteella</strong>. Muista, että palaute ei ole hyökkäys vaan mahdollisuus oppia. Kysy itseltäsi: “Mitä hyötyä voin ottaa tästä irti?”.<br><br> <strong>2. Toinen askel on kuunnella rauhassa</strong>. Anna palautteen antajan puhua loppuun äläkä keskeytä. Toista sitten omin sanoin: “Ymmärsinkö oikein, että tarkoitit…”. Näin varmistat, että molemmat ymmärrätte asian samalla tavalla.<br><br> <strong>3. Kolmas askel on hallita tunteet tilanteessa</strong>. Jos palaute tuntuu epämiellyttävältä, hengitä syvään ennen kuin vastaat. Voit myös sanoa: “Kiitos palautteesta, haluan miettiä tätä hetken ja palata asiaan.” Tämä antaa aikaa tunteiden tasaantumiseen.<br><br> <strong>4. Neljäs askel on erotella fakta ja tunne</strong>. Mieti, mitä konkreettista asiaa palaute koski. Jos palaute herätti vahvoja tunteita, kirjoita ne ensin ylös ja palaa asiaan myöhemmin rauhallisemmin.<br><br> <strong>5. Viides askel on hyödyntää palaute kehittymiseen</strong>. Pohdi, miten voit muuttaa toimintaasi palautteen perusteella, ja tee pieni konkreettinen tavoite, kuten kokousten parempi valmistelu tai tiimin kuunteleminen enemmän.<br><br> <strong>6. Kuudes askel on pyytää palautetta aktiivisesti</strong>. Kun pyydät palautetta itse, siitä tulee osa normaalia vuorovaikutusta, eikä se tule vain yllättäen. Voit kysyä esimerkiksi: “Mitä voisin tehdä vielä paremmin?”.<br><br> <i>Pienenä harjoituksena voit palautteen saamisen jälkeen kirjoittaa ylös, mitä konkreettista palautteessa sanottiin, mitä tunteita se herätti sinussa, mitä opit itsestäsi ja mihin yhteen asiaan sitoudut parantaaksesi toimintaasi.</i>"
+};
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const questions = document.querySelectorAll(".question");
+  const questionsPerPage = 3; // Kysymykset per sivu
+  let currentPage = 0;
+
+  const texts = document.getElementById("texts")
+  const scTitle = document.getElementById("scTitle")
+  const paragraph = document.getElementById("paragraph")
+  const nextBtn = document.getElementById("nextBtn");
+  const feedbackBtn = document.getElementById("feedbackBtn");
+  const feedback = document.getElementById("feedback");
+  function checkVisibleAnswered() {
+    const start = currentPage * questionsPerPage;
+    const end = start + questionsPerPage;
+
+    let allAnswered = true;
+
+    for (let i = start; i < end && i < questions.length; i++) {
+      const radios = questions[i].querySelectorAll("input[type=radio]");
+      const name = radios[0].name;
+      const selected = document.querySelector(`input[name="${name}"]:checked`);
+      if (!selected) {
+        allAnswered = false;
+        break;
+      }
+    }
+
+    nextBtn.disabled = !allAnswered;
+}
+
+  // näyttää oikeen määrän kysymyksiä samanaikaisesti
+  function showPage(page) {
+    questions.forEach((q, i) => {
+      q.style.display = (i >= page * questionsPerPage && i < (page + 1) * questionsPerPage)
+        ? "block"
+        : "none";
+    });
+
+    // piilottaa napit 
+    nextBtn.style.display = (page < Math.ceil(questions.length / questionsPerPage) - 1)
+      ? "inline-block"
+      : "none";
+    feedbackBtn.style.display = (page === Math.ceil(questions.length / questionsPerPage) - 1)
+      ? "inline-block"
+      : "none";
+
+      checkVisibleAnswered();
+  }
+  document.querySelectorAll('input[type="radio"]').forEach(r => {
+  r.addEventListener("change", checkVisibleAnswered);
+});
+
+
+  nextBtn.addEventListener("click", () => {
+    currentPage++;
+    showPage(currentPage);
+    scTitle.style.display = "none";
+    paragraph.style.display = "none";
+    //texts.style.display = "none";
+  });
+
+  document.getElementById("quizForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const questions = document.querySelectorAll(".question");
+    let score = 0;
+    const total = questions.length;
+    let details = "";
+
+    questions.forEach((q, index) => {
+      const correctValue = q.dataset.correct;
+      const selected = document.querySelector(`input[name=q${index + 1}]:checked`);
+      if (!selected) return;
+
+      const isCorrect = selected.value === correctValue;
+      const questionId = `q${index+1}`;
+      const wrongText = feedbackTexts[questionId]
+      if (isCorrect) {
+        score++;
+      } else {
+        // näyttää vain parantamis kehotusta vaativat kysymykset
+        details += `
+          <p>
+            <strong>${q.querySelector("p").textContent}</strong><br>
+            <span>${wrongText}</span>
+          </p>`;
+      }
+    });
+
+    // piilottaa kaiken muun
+    questions.forEach(q => q.style.display = "none");
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("feedbackBtn").style.display = "none";
+    document.getElementById("texts").style.display = "none";
+
+
+    feedback.style.display = "block";
+
+    const percent = Math.round((score / total) * 100);
+    let summaryText = "";
+
+    if (percent === 100) {
+      summaryText = `<strong>Sinulla on erinomaiset työelämätaidot!<br><br>Tässä ovat sinun vahvuutesi:</strong>
+        <br><br>
+        - Perustaidot ja digitaidot sujuvat hienosti.<br>
+        - Osaat johtaa itseäsi: hallitset ajan, vastaat työstäsi ja ratkaiset ongelmia.<br>
+        - Olet hyvä keskustelemaan, kuuntelemaan ja toimimaan ryhmässä sekä asiakkaiden kanssa.<br>
+        - Sinulla on halu oppia ja sopeudut hyvin muutoksiin.<br>
+        - Hallitset työtehtävät ja huomioit turvallisuuden.<br>
+        - Olet aktiivinen, positiivinen ja vastuullinen.<br>
+        - Osaat luoda kontakteja ja opit muilta.<br>
+        - Hallitset paineen ja otat palautteen hyvin vastaan.<br><br>
+        <strong>Jatka samaan malliin – sinulla on loistavat valmiudet menestyä työelämässä!</strong>
+      `;
+    }
+
+    //palautteen tulostus
+    feedback.innerHTML = `<h2>Palaute</h2><p>${summaryText}</p><hr>${details}`;
+  });
+
+  showPage(currentPage);
+});
+</script>
+
+
+</body>
+</html>
